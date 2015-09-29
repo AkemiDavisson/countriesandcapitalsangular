@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" ng-app='cac-app'>
+	<head>
+		<meta charset="utf-8">
+		<title>Countries and Capitals</title>
+		<meta name="description" content="Countries and Capitals">
+		<!--[if lt IE 9]>
+			  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+			  <![endif]-->
+		  <link rel="icon" type="image/png" href="core/images/planet-favicon.ico">
+
+		  <!-- build:css ./_assets/combined.css -->
+		  <link rel="stylesheet" href="style.css">
+		  <link rel="stylesheet" type="text/css" href="bower_components/animate.css/animate.css">
+		  <!-- endbuild  -->
+	</head>
+
+		<body ng-class='{loading: isLoading}'>
+			<div class='container'>
+				<h1>Countries and Capitals</h1>
+
+				<nav>
+					<ul>
+						<li>
+							<a ng-href= "#/" class='btn btn-blue' value='Home'>Home</a>
+						</li>
+						<li>
+							<a ng-href= "#/countries" class='btn btn-blue' value='Countries'>Countries</a>
+						</li>
+					</ul>
+				</nav>
+
+				<div ng-view class='animate-view dn-bounce-left'>
+					<!--angular views-->
+				</div>
+			</div>
+
+		<!--build:js ./_assets/combined.js -->
+		<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+		<script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+		<script type="text/javascript" src="bower_components/angular-animate/angular-animate.js"></script>
+		<script type="text/javascript" src="bower_components/ngAnimate-animate.css/animate.js"></script>
+		<script type="text/javascript" src="core/geonamesApiLibrary.js"></script>
+		<script type="text/javascript" src="core/cac-app.js"></script>
+		<script type="text/javascript" src="countries/controllers/countriesController.js"></script>
+		<script type="text/javascript" src="country/controllers/countryController.js"></script>
+		<script type="text/javascript" src="core/routes.js"></script>
+		<!-- endbuild  -->
+		
+		</body>
+</html>

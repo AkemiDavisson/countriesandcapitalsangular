@@ -1,0 +1,45 @@
+<div class='a-container'>
+	<div class='panel country-panel'>
+		<div class='panel-heading alt-heading'>
+			<h3 class='panel-title'>Country Detail</h3>
+		</div>
+		<div class='country-container'> 
+			<h2>{{country.countryName}}</h2>
+
+			<ul class="ng-scope">	
+				<li>
+					<span class='title'>Population:</span> 
+					<span class='value'>{{country.population | number}}</span>
+				</li>
+				<li>
+					<span class='title'>Area:</span> 
+					<span class='value'>{{country.areaInSqKm |number }}</span>
+				</li>
+				<li>
+					<span class='title'>Capital:</span> 
+					<span class='value'>{{country.capital}}</span>
+				</li>
+				<li>
+					<span class='title'>Capital Population:</span> 
+					<span class='value'>{{capital.population | number}}</span>
+				</li>
+				<li>
+					<span class='title'>{{country.countryName}}'s Neighbours:</span>
+					<span class='value'>
+						<span ng-if='neighbours.length === 0'> N/A </span>
+						<span ng-if='neighbours.length >= 1' ng-repeat='neighbour in neighbours'><a href="#/countries/{{ neighbour.countryCode }}/">{{neighbour.name}}</a><span ng-if="neighbour != neighbours[neighbours.length-1]">,</span>		
+					</span>
+				</li>
+			</ul>
+			<div class='content-container'>
+				<span class='map'>
+					<img ng-src="http://www.geonames.org/flags/x/{{country.countryCode | lowercase}}.gif" />
+				</span>
+				<span class='flag'>
+					<img id='myImage' ng-src="http://www.geonames.org/img/country/250/{{country.countryCode}}.png" />
+				</span>
+				
+			</div>
+		</div>
+	</div>
+</div>
